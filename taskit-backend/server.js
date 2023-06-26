@@ -6,15 +6,13 @@ const cors = require('cors');
 const app = express();
 const port = 5001; // Change this to the desired port number
 
-const pw = 'mongodb+srv://amitandomerdb:AO123@cluster0.emguiob.mongodb.net/taskit-backend?retryWrites=true&w=majority';
-
 // Middleware
 app.use(bodyParser.json());
 app.use(cors());
 
 // Connect to MongoDB Atlas
 mongoose
-  .connect(pw, {
+  .connect('mongodb+srv://amitandomerdb:AO123@cluster0.emguiob.mongodb.net/taskit-backend?retryWrites=true&w=majority', {
     useNewUrlParser: true,
     useUnifiedTopology: true,
   })
