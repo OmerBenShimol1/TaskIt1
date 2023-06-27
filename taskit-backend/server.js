@@ -11,7 +11,7 @@ app.use(cors());
 
 // CORS configuration
 const corsOptions = {
-  origin: 'https://task-it1.vercel.app', // Replace with your frontend URL
+  origin: 'https://task-it1-omerbenshimol1.vercel.app/', // Replace with your frontend URL
   optionsSuccessStatus: 200 // some legacy browsers (IE11, various SmartTVs) choke on 204
 };
 app.use(cors(corsOptions));
