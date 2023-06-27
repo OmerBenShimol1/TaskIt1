@@ -62,6 +62,9 @@ const Note = mongoose.model('Note', noteSchema);
 
 // Define a route for handling user registration
 app.post('/taskit-backend/register', async (req, res) => {
+  res.header('Access-Control-Allow-Origin', 'https://task-it1.vercel.app'); // Set the allowed origin
+  res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
+
   const { username, password } = req.body;
 
   try {
@@ -84,6 +87,8 @@ app.post('/taskit-backend/register', async (req, res) => {
 });
 
 app.post('/taskit-backend/login', async (req, res) => {
+  res.header('Access-Control-Allow-Origin', 'https://task-it1.vercel.app'); // Set the allowed origin
+  res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
   const { username, password } = req.body;
 
   try {
@@ -108,6 +113,8 @@ app.post('/taskit-backend/login', async (req, res) => {
 
 // Define a route for saving task data
 app.post('/taskit-backend/saveTaskData', async (req, res) => {
+  res.header('Access-Control-Allow-Origin', 'https://task-it1.vercel.app'); // Set the allowed origin
+  res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
   const { taskName, priority, date, username,column } = req.body;
 
   try {
@@ -130,6 +137,8 @@ app.post('/taskit-backend/saveTaskData', async (req, res) => {
 
 // Define a route for inserting user-specific notes
 app.post('/taskit-backend/insertUserNotes', async (req, res) => {
+  res.header('Access-Control-Allow-Origin', 'https://task-it1.vercel.app'); // Set the allowed origin
+  res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
   const { username } = req.body;
 
   try {
@@ -156,6 +165,8 @@ app.post('/taskit-backend/insertUserNotes', async (req, res) => {
 
 // Define a route for retrieving notes for a user
 app.get('/taskit-backend/notes', async (req, res) => {
+  res.header('Access-Control-Allow-Origin', 'https://task-it1.vercel.app'); // Set the allowed origin
+  res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
   const { username } = req.query;
 
   try {
@@ -179,6 +190,8 @@ app.get('/taskit-backend/notes', async (req, res) => {
 
 // Define a route for updating task data
 app.put('/taskit-backend/updateTaskData', async (req, res) => {
+  res.header('Access-Control-Allow-Origin', 'https://task-it1.vercel.app'); // Set the allowed origin
+  res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
   const { taskId, newTaskName, newStatus } = req.body;
 
   try {
@@ -202,6 +215,8 @@ app.put('/taskit-backend/updateTaskData', async (req, res) => {
 });
 
 app.delete('/taskit-backend/deleteNote/:id', async (req, res) => {
+  res.header('Access-Control-Allow-Origin', 'https://task-it1.vercel.app'); // Set the allowed origin
+  res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
   const { id } = req.params;
 
   try {
