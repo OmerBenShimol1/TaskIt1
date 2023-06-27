@@ -5,16 +5,11 @@ const cors = require('cors');
 const app = express();
 const port = 5001; // Change this to the desired port number
 
-// Middleware
-app.use(bodyParser.json());
-app.use(cors());
-
-// CORS configuration
-const corsOptions = {
-  origin: 'https://task-it1-omerbenshimol1.vercel.app/', // Replace with your frontend URL
-  optionsSuccessStatus: 200 // some legacy browsers (IE11, various SmartTVs) choke on 204
-};
-app.use(cors(corsOptions));
+app.use(
+  cors({
+    origin: 'https://task-it1.vercel.app',
+  })
+);
 
 // Connect to MongoDB Atlas
 mongoose

@@ -16,7 +16,7 @@ const Login = ({ handleLogin, handleClose, setShowLogin, setShowTable, setShowSi
     event.preventDefault();
 
     try {
-      const response = await fetch('https://task-it1-server.vercel.app//taskit-backend/login', {
+      const response = await fetch('https://task-it1-server.vercel.app/taskit-backend/login', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

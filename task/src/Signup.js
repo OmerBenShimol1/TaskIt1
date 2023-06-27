@@ -26,7 +26,7 @@ const Signup = ({
     event.preventDefault();
     if (password === confirmPassword) {
       try {
-        const response = await axios.post('https://task-it1-server.vercel.app//taskit-backend/register', {
+        const response = await axios.post('https://task-it1-server.vercel.app/taskit-backend/register', {
           username,
           password,
         });

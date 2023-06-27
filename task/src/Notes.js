@@ -14,7 +14,7 @@ const Notes = ({
   }) => {
     const handleEditNote = async (column, index, newTask, selectedColumn) => {
         try {
-          const response = await axios.put('https://task-it1-server.vercel.app//taskit-backend/updateTaskData', {
+          const response = await axios.put('https://task-it1-server.vercel.app/taskit-backend/updateTaskData', {
             taskId: notes[column][index].id,
             newTaskName: newTask,
             newStatus: selectedColumn,
@@ -67,7 +67,7 @@ const Notes = ({
         try {
           // Make the DELETE request to the server after a delay
           await new Promise((resolve) => setTimeout(resolve, 500)); // Add a delay of 500 milliseconds
-          const response = await axios.delete(`https://task-it1-server.vercel.app//taskit-backend/deleteNote/${id}`);
+          const response = await axios.delete(`https://task-it1-server.vercel.app/taskit-backend/deleteNote/${id}`);
       
           if (response.status !== 200) {
             throw new Error(response.data.message);

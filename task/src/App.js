@@ -38,7 +38,7 @@
 
   const getNotes = async (username) => {
     try {
-      const response = await axios.get('https://task-it1-server.vercel.app//taskit-backend/notes', {
+      const response = await axios.get('https://task-it1-server.vercel.app/taskit-backend/notes', {
         params: { username },
       });
       const notesData = response.data;
@@ -172,7 +172,7 @@
     event.preventDefault();
 
     try {
-      await axios.post('https://task-it1-server.vercel.app//taskit-backend/saveTaskData', {
+      await axios.post('https://task-it1-server.vercel.app/taskit-backend/saveTaskData', {
         taskName: task,
         priority,
         date,
