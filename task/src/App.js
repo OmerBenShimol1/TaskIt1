@@ -27,7 +27,7 @@
     const [priority, setPriority] = useState('Low');
     const [date, setDate] = useState('');
     const [currentDateTime, setCurrentDateTime] = useState(new Date());
-    const [showLogo, setShowLogo] = useState(true);
+    const [showLogo, setShowLogo] = useState(false);
     const [selectedDate, setSelectedDate] = useState(null);
     const [showCalendarPopup, setShowCalendarPopup] = useState(false);
     const [showTodayTasks] = useState(false);
@@ -152,8 +152,6 @@
       event.preventDefault();
       setShowLogin(true);
       setUsername(loggedInUsername); // Update the username state with the logged-in username
-      setShowLogo(false)
-      setShowCalendarPopup(false)
     };
     // Handle Signup by given input
     const handleSignup = (event) => {
@@ -259,6 +257,8 @@
           setNotes={setNotes}
           username={username}
           getNotes={getNotes}
+          setShowLogo={setShowLogo}
+          setShowCalendarPopup={setShowCalendarPopup}
         />
               <div className="center-bottom2">
                 <button
