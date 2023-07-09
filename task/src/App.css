@@ -595,7 +595,7 @@ th, td {
 .top-section {
   display: flex;
   flex-direction: column;
-  height: 20vh; /* Set the height of the parent container */
+ /* Set the height of the parent container */
 
 }
 .parent-container {
