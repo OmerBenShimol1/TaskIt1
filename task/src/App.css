@@ -1,3 +1,4 @@
+
 .center {
   margin-left: auto;
   margin-right: auto;
@@ -36,13 +37,6 @@ body {
   margin: 0;
   padding: 0;
   min-height: 100%;
-  display: flex;
-}
-#root {
-  flex-grow: 1;
-  display: flex;
-  justify-content: center;
-  align-items: center;
 }
 	
 .awesome-button {
@@ -57,7 +51,6 @@ body {
   display: inline-block;
   font-size: 20px;
   margin: 4px 2px;
-  margin-top: 4px;
   cursor: pointer;
   border-radius: 20px;
   box-shadow: 0 8px 16px rgba(0,0,0,0.2);
@@ -334,7 +327,6 @@ body {
   justify-content: center;
   justify-content: center;
   align-items: center;
-  margin-bottom: 2px;
 }
 
 .logo-img {
