@@ -23,7 +23,7 @@ const Notes = ({
       
           if (response.status === 200) {
             console.log(result.message); // Task data updated successfully
-            // Perform any other actions or display a success message to the user
+            setShowLogo(false)
           } else {
             console.error(result.message); // Internal server error or note not found
             // Display an error message to the user
