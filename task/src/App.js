@@ -264,8 +264,6 @@
           getNotes={getNotes}
           showLogo={showLogo} 
           setShowLogo={setShowLogo}
-          showCalendarPopup={showCalendarPopup}
-          setShowCalendarPopup={setShowCalendarPopup}
         />
               <div className="center-bottom2">
                 <button
