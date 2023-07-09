@@ -9,9 +9,7 @@ const Notes = ({
     setSelectedColumns,
     setNotes,
     username,
-    getNotes,
-    setShowLogo,
-    setShowCalendarPopup
+    getNotes
   }) => {
     const handleEditNote = async (column, index, newTask, selectedColumn) => {
         try {

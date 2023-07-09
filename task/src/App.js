@@ -27,7 +27,7 @@
     const [priority, setPriority] = useState('Low');
     const [date, setDate] = useState('');
     const [currentDateTime, setCurrentDateTime] = useState(new Date());
-    const [showLogo, setShowLogo] = useState(false);
+    const [showLogo, setShowLogo] = useState(true);
     const [selectedDate, setSelectedDate] = useState(null);
     const [showCalendarPopup, setShowCalendarPopup] = useState(false);
     const [showTodayTasks] = useState(false);
@@ -257,8 +257,6 @@
           setNotes={setNotes}
           username={username}
           getNotes={getNotes}
-          setShowLogo={setShowLogo}
-          setShowCalendarPopup={setShowCalendarPopup}
         />
               <div className="center-bottom2">
                 <button
