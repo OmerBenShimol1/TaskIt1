@@ -136,7 +136,11 @@
     setShowCalendarPopup(!showCalendarPopup);
   };
       
-
+    //Show the calender pop up
+    const handleLogoPopUp = () => {
+      setShowLogo(!showLogo) // Reset the selected date
+      setShowCalendarPopup(!showCalendarPopup);
+    };
 
     useEffect(() => {
       const timer = setInterval(() => {
@@ -249,15 +253,16 @@
     </div>
   </div>
 )}
-{!showLogo && !showCalendarPopup && (
+
 <Notes
           notes={notes}
           selectedColumns={selectedColumns}
           setSelectedColumns={setSelectedColumns}
+          handleLogoPopUp={handleLogoPopUp}
           setNotes={setNotes}
           username={username}
           getNotes={getNotes}
-        />)}
+        />
               <div className="center-bottom2">
                 <button
                   id="bt"
@@ -270,7 +275,6 @@
             </div>
           ) : (
             <div>
-
   {showLogin && (
     <Login
       handleLogin={(event, loggedInUsername) => handleLogin(event, loggedInUsername)}
