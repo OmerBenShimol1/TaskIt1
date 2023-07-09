@@ -323,7 +323,6 @@ body {
 
 
 .top-section {
-  flex-grow: 1;
   display: flex;
   justify-content: center;
   justify-content: center;
@@ -613,7 +612,7 @@ th, td {
   width: max-content;
   flex-direction: row; 
   align-items: center; 
-  margin-top: 1px;
+  margin-top: 5px;
   margin-bottom: 10px;
   background-color: #636363;
 
