@@ -817,3 +817,39 @@ th, td {
 .calendar-popup-button.cancel:hover {
   background-color: #b30024;
 }
+
+
+/* Media query for mobile devices */
+@media (max-width: 768px) {
+  .center {
+    width: 100%;
+  }
+  
+  h1 {
+    font-size: 2rem;
+  }
+  
+  body {
+    background-position: top;
+  }
+  
+  .awesome-button,
+  .newtask-button,
+  .awesome-button2,
+  .login-container,
+  .signup-container,
+  .my-table,
+  .logo-img,
+  .clock
+  .login-form input[type="text"],
+  .login-form input[type="password"],
+  .login-form button[type="submit"],
+  .login-form button.login-form.button,
+  .signup-form button.login-form.button {
+    width: 80%;
+  }
+
+  
+  /* Adjust other styles as needed for mobile layout */
+  /* ... */
+}
