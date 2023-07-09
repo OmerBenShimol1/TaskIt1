@@ -279,8 +279,8 @@
       setShowSignup={setShowSignup}
       getNotes={getNotes}
       setNotes={setNotes}
-      setShowLogo={False}
-      setShowCalendarPopup={False}
+      setShowLogo={setShowLogo(false)}
+      setShowCalendarPopup={setShowCalendarPopup(false)}
     />
   )}
                   {showSignup && ( <Signup
