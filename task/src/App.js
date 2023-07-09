@@ -136,6 +136,12 @@
     setShowCalendarPopup(!showCalendarPopup);
   };
       
+    //Show the calender pop up
+    const handleLogoPopUp = () => {
+      setShowLogo(false);
+      setShowCalendarPopup(false);
+    };
+
     useEffect(() => {
       const timer = setInterval(() => {
         setCurrentDateTime(new Date());
