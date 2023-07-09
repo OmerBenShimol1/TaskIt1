@@ -584,6 +584,9 @@ th, td {
     display: block;
     text-align: left;
   }
+  .logo-img {
+    max-width: 500px;
+  }
 }
 
 
