@@ -136,12 +136,6 @@
     setShowCalendarPopup(!showCalendarPopup);
   };
       
-    //Show the calender pop up
-    const handleLogoPopUp = () => {
-      setShowLogo(false);
-      setShowCalendarPopup(false);
-    };
-
     useEffect(() => {
       const timer = setInterval(() => {
         setCurrentDateTime(new Date());
@@ -264,6 +258,8 @@
           getNotes={getNotes}
           showLogo={showLogo} 
           setShowLogo={setShowLogo}
+          showCalendarPopup={showCalendarPopup}
+          setShowCalendarPopup={setShowCalendarPopup}
         />
               <div className="center-bottom2">
                 <button

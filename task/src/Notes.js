@@ -11,9 +11,12 @@ const Notes = ({
     username,
     getNotes,
     ShowLogo,
-    setShowLogo
+    setShowLogo,
+    showCalendarPopup,
+    setShowCalendarPopup
   }) => {
     setShowLogo(false)
+    setShowCalendarPopup(false)
 
     const handleEditNote = async (column, index, newTask, selectedColumn) => {
         try {
