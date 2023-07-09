@@ -18,7 +18,11 @@ h1 {
 }
 	
 
- 
+h8 {
+  text-align: center;
+  color: #e9edf1;
+  margin-right: 20px;
+}
 	
 	
 html {
@@ -605,9 +609,8 @@ th, td {
 
 .toolbar {
   display: flex;
-  flex-direction: row; /* Set the direction to row */
-  max-width: 2000em;
-  align-items: center; /* Align items vertically center */
+  flex-direction: row; 
+  align-items: center; 
   margin-top: 5px;
   margin-bottom: 10px;
   background-color: #636363;

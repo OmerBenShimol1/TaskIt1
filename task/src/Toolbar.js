@@ -36,7 +36,7 @@ const Toolbar = ({ handleLogout, handleCalendarButtonClick, handleTodayTasks, ge
         <FontAwesomeIcon icon={faLightbulb} />
         How it works?
       </button>
-      <h2>Task It</h2>
+      <h8>Task It</h8>
     </div>
   );
 };
