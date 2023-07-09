@@ -536,7 +536,7 @@ body {
   background-color: #50d627;
 }
 #tableContainer td {
-  position: fixed;
+  position: relative;
   padding: 10px;
 }
 
@@ -634,6 +634,7 @@ th, td {
 }
 
 .clock {
+    display: flex;
     font-size: 1rem;
     font-weight: bold;
     color: #fff;
