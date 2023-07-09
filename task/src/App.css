@@ -570,7 +570,7 @@ th, td {
 }
 
 /* Media query for mobile devices */
-@media (max-width: 768px) {
+@media (max-width: 667px, max-height: 375px ) {
   table.responsive-table {
     display: block;
     overflow-x: auto;
