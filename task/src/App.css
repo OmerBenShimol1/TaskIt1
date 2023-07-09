@@ -234,6 +234,7 @@ body {
     }
 
   table {
+    background-color: ;
     width: 80%;
     border-collapse: collapse;
     margin-top: 20px;
@@ -311,6 +312,7 @@ body {
 }
 body {
   background-image: url("brown-wooden-flooring.jpg");
+  background-color: #D2D5DC;
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
