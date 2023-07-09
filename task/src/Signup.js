@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import axios from 'axios';
-
+/* Signup Page */
 const Signup = ({
     handleSignup,
     confirmPassword,
@@ -11,17 +11,17 @@ const Signup = ({
   const [password, setPassword] = useState('');
   const [registrationSuccess, setRegistrationSuccess] = useState(false);
   const [passwordsMatch, setPasswordsMatch] = useState(true); // Set an initial value
-
+// Set the new user's username
   const handleUsernameChange = (event) => {
     setUsername(event.target.value);
   };
-
+// Set the new user's password
   const handlePasswordChange = (event) => {
     setPassword(event.target.value);
   };
 
 
-
+// Handle Signup form
   const handleRegistrationFormSubmit = async (event) => {
     event.preventDefault();
     if (password === confirmPassword) {
@@ -33,7 +33,7 @@ const Signup = ({
 
         console.log(response.data.message);
 
-        // Display success message or redirect to login page
+        // Show success message or going back to signup page
         console.log('Registration successful');
         setRegistrationSuccess(true);
         setPasswordsMatch(true);
@@ -51,7 +51,7 @@ const Signup = ({
       setPasswordsMatch(false);
     }
   };
-
+  //Signup Form
   return (
     <div id="hiddenContent2">
       <div className="login-container">

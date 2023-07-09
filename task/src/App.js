@@ -9,7 +9,7 @@
   import Navbar from './Navbar';
   import Toolbar from './Toolbar';
   import Notes from './Notes';
-
+/* Main App page */
 
   function App() {
     const [notes, setNotes] = useState({
@@ -35,7 +35,7 @@
     const [showInst, setShowinst] = useState(false);
     const [showAllTasks] = useState(false); // Add new state variable
     const [username, setUsername] = useState('');
-
+// Get user's notes
   const getNotes = async (username) => {
     try {
       const response = await axios.get('https://task-it1-server.vercel.app/taskit-backend/notes', {
@@ -50,7 +50,7 @@
         done: [],
       };
 
-      // Loop through each note in notesData and insert it into the appropriate status category
+      // Checking each note and put it to the right category in table.
       notesData.forEach((note) => {
         const { _id, taskName, priority, date, column } = note;
 
@@ -62,18 +62,18 @@
           status: column,
         };
 
-        // Check if the column name matches the status and push the note into the respective category
-        if (updatedNotes[column]) {
+        // Check if the column name matches the status and put the note into the right category
+        if (updatedNotes[column]) { 
           updatedNotes[column].push(newNote);
         }
       });
 
-      setNotes(updatedNotes); // Set the state with the retrieved notes
+      setNotes(updatedNotes); // Update the notes
     } catch (error) {
       console.error('Error retrieving notes:', error.response.data.message);
     }
   };
-    
+    // Handle Today's tasks. (Showing the today's date notes)
   const handleTodayTasks = () => {
     setShowNotes((prevShowNotes) => !prevShowNotes);
   
@@ -97,7 +97,7 @@
     }
   };
      
-  
+  // Handle Tasks by selected day. (Showing the specific date notes)
   const handleSelectedDateTasks = (selectedDate) => {
     if (selectedDate) {
       const timezoneOffset = selectedDate.getTimezoneOffset() * 60000;
@@ -130,7 +130,7 @@
       setSelectedDate(selectedDate);
     }
   };
-    
+    //Show the calender pop up
   const handleCalendarButtonClick = () => {
     setSelectedDate(null); // Reset the selected date
     setShowCalendarPopup(!showCalendarPopup);
@@ -147,18 +147,18 @@
         clearInterval(timer);
       };
     }, []);
-
+// Handle login by given input
     const handleLogin = (event, loggedInUsername) => {
       event.preventDefault();
       setShowLogin(true);
       setUsername(loggedInUsername); // Update the username state with the logged-in username
     };
-    
+    // Handle Signup by given input
     const handleSignup = (event) => {
       event.preventDefault();
       setShowSignup(true);
     };
-
+// Handle close button (Send the user to the home page from Login or Signup)
     const handleClose = () => {
       setShowLogin(false);
     };
@@ -167,7 +167,7 @@
       setShowPopup(!showPopup);
     };
     
-
+// Handle Note submit by given note data
   const handleNoteSubmit = async (event) => {
     event.preventDefault();
 

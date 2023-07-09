@@ -7,9 +7,11 @@ import {
   faLightbulb,
 } from '@fortawesome/free-solid-svg-icons';
 
+/*Toolbar Page*/
+
 const Toolbar = ({ handleLogout, handleCalendarButtonClick, handleTodayTasks, getNotes, username, setShowinst }) => {
   const handleTodayTasksClick = () => {
-    handleTodayTasks(); // Call the callback function when the button is clicked
+    handleTodayTasks(); // Call the function when the button is clicked
   };
 
   return (

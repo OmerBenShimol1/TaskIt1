@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-
+/* Login Page */
 const Login = ({ handleLogin, handleClose, setShowLogin, setShowTable, setShowSignup, getNotes, setNotes }) => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
@@ -14,7 +14,7 @@ const Login = ({ handleLogin, handleClose, setShowLogin, setShowTable, setShowSi
 
   const handleLoginFormSubmit = async (event) => {
     event.preventDefault();
-
+// Check if the given username and password exists and match
     try {
       const response = await fetch('https://task-it1-server.vercel.app/taskit-backend/login', {
         method: 'POST',
@@ -27,7 +27,7 @@ const Login = ({ handleLogin, handleClose, setShowLogin, setShowTable, setShowSi
       if (response.ok) {
         setShowTable(true);
         setShowSignup(false);
-
+// Getting user notes from the database.
         const notesData = await getNotes(username);
 
         if (notesData) {
@@ -47,7 +47,7 @@ const Login = ({ handleLogin, handleClose, setShowLogin, setShowTable, setShowSi
       console.error('Error during login:', error);
     }
   };
-
+// Login form
   return (
     <div id="hiddenContent">
       <div className="login-container">
