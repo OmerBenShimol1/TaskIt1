@@ -152,6 +152,8 @@
       event.preventDefault();
       setShowLogin(true);
       setUsername(loggedInUsername); // Update the username state with the logged-in username
+      setShowLogo(false)
+      setShowCalendarPopup(false)
     };
     // Handle Signup by given input
     const handleSignup = (event) => {
@@ -279,8 +281,6 @@
       setShowSignup={setShowSignup}
       getNotes={getNotes}
       setNotes={setNotes}
-      setShowLogo={setShowLogo(false)}
-      setShowCalendarPopup={setShowCalendarPopup(false)}
     />
   )}
                   {showSignup && ( <Signup
