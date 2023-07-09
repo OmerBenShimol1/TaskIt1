@@ -234,7 +234,6 @@ body {
     }
 
   table {
-    background-color: ;
     width: 80%;
     border-collapse: collapse;
     margin-top: 20px;
@@ -570,7 +569,7 @@ th, td {
 }
 
 /* Media query for mobile devices */
-@media (max-width: 667px, max-height: 375px ) {
+@media (max-width: 667px) and (max-height: 375px ) {
   table.responsive-table {
     display: block;
     overflow-x: auto;
@@ -595,11 +594,10 @@ th, td {
 .top-section {
   display: flex;
   flex-direction: column;
- /* Set the height of the parent container */
 
 }
 .parent-container {
-  height: 100vh; /* Set the height of the parent container */
+  height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
