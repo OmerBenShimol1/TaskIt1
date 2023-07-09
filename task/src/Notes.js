@@ -10,6 +10,7 @@ const Notes = ({
     setNotes,
     username,
     getNotes,
+    ShowLogo,
     setShowLogo
   }) => {
     const handleEditNote = async (column, index, newTask, selectedColumn) => {

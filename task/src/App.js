@@ -262,6 +262,8 @@
           setNotes={setNotes}
           username={username}
           getNotes={getNotes}
+          showLogo={showLogo} 
+          setShowLogo={setShowLogo}
         />
               <div className="center-bottom2">
                 <button
