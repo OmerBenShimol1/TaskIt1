@@ -1,5 +1,5 @@
 import React from 'react';
-
+// Navbar Page - Contains Today's date logo
 function Navbar({ currentDateTime }) {
 
     return (
