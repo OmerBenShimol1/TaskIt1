@@ -54,6 +54,25 @@ body {
   align-items: center;
   justify-content: center;
 }
+.newtask-button{
+  background-image: url('wood.jpg');
+  background-size: cover;
+  border: none;
+  font-family: fantasy;
+  color: rgb(0, 0, 0);
+  padding: 30px 40px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 30px;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 20px;
+  box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+  transition: all 0.3s ease;
+  align-items: center;
+  j
+
 
  .note {
       background-color: white;

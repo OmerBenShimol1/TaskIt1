@@ -262,9 +262,9 @@
                 <button
                   id="bt"
                   onClick={handleShowPopup}
-                  className="awesome-button"
+                  className="newtask-button"
                 >
-                  New Task
+                  +
                 </button>
               </div>
             </div>
