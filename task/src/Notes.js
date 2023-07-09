@@ -13,6 +13,8 @@ const Notes = ({
     ShowLogo,
     setShowLogo
   }) => {
+    setShowLogo(false)
+
     const handleEditNote = async (column, index, newTask, selectedColumn) => {
         try {
           const response = await axios.put('https://task-it1-server.vercel.app/taskit-backend/updateTaskData', {
@@ -25,7 +27,6 @@ const Notes = ({
       
           if (response.status === 200) {
             console.log(result.message); // Task data updated successfully
-            setShowLogo(false)
           } else {
             console.error(result.message); // Internal server error or note not found
             // Display an error message to the user
