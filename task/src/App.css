@@ -323,6 +323,7 @@ body {
 
 
 .top-section {
+  flex-grow: 1;
   display: flex;
   justify-content: center;
   justify-content: center;
