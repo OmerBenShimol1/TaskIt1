@@ -218,7 +218,7 @@
   handleLogout={handleLogout}
   handleCalendarButtonClick={handleCalendarButtonClick}
   handleTodayTasks={handleTodayTasks}
-  handleSelectedDateTasks={handleSelectedDateTasks} // Pass the new function as a prop
+  handleSelectedDateTasks={handleSelectedDateTasks}
   getNotes={getNotes}
   username={username}
   setShowinst={setShowinst}
@@ -249,7 +249,7 @@
     </div>
   </div>
 )}
-
+{!showLogo && !showCalendarPopup && (
 <Notes
           notes={notes}
           selectedColumns={selectedColumns}
@@ -257,7 +257,7 @@
           setNotes={setNotes}
           username={username}
           getNotes={getNotes}
-        />
+        />)}
               <div className="center-bottom2">
                 <button
                   id="bt"
@@ -270,6 +270,7 @@
             </div>
           ) : (
             <div>
+
   {showLogin && (
     <Login
       handleLogin={(event, loggedInUsername) => handleLogin(event, loggedInUsername)}
