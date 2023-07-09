@@ -138,8 +138,8 @@
       
     //Show the calender pop up
     const handleLogoPopUp = () => {
-      setShowLogo(!showLogo) // Reset the selected date
-      setShowCalendarPopup(!showCalendarPopup);
+      setShowLogo(false);
+      setShowCalendarPopup(false);
     };
 
     useEffect(() => {
