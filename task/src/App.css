@@ -39,6 +39,26 @@ body {
   min-height: 100%;
 }
 	
+/*.awesome-button {
+  background-image: url('wood.jpg');
+  background-size: cover;
+  border: none;
+  font-family: fantasy;
+  color: rgb(0, 0, 0);
+  padding: 30px 40px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 20px;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 20px;
+  box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+  transition: all 0.3s ease;
+  align-items: center;
+  justify-content: center;
+}*/
+
 .awesome-button {
   background-image: url('wood.jpg');
   background-size: cover;
@@ -48,8 +68,7 @@ body {
   padding: 30px 40px;
   text-align: center;
   text-decoration: none;
-  
-  display: flex;
+  display: inline-block;
   font-size: 20px;
   margin: 4px 2px;
   cursor: pointer;
@@ -58,7 +77,13 @@ body {
   transition: all 0.3s ease;
   align-items: center;
   justify-content: center;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
+
+
 .newtask-button{
   background-image: url('wood.jpg');
   background-size: cover;
