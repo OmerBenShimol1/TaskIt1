@@ -343,11 +343,13 @@ body {
   justify-content: center;
   align-items: center;
   height: 100%;
+  overflow: hidden;
 }
 
 .logo-img {
   max-width: 100%;
-  height: auto;
+  max-height: 100%;
+  object-fit: contain;
 }
 
 .task-info {
