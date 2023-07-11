@@ -9,22 +9,22 @@ import {
 
 /*Toolbar Page*/
 
-const Toolbar = ({ handleLogout, handleCalendarButtonClick, handleTodayTasks, getNotes, username, setShowinst }) => {
-  const handleTodayTasksClick = () => {
-    handleTodayTasks(); // Call the function when the button is clicked
+const Toolbar = ({ logout, CalendarButtonClick, TodayTasks, getNotes, username, setShowinst }) => {
+  const TodayTasksClick = () => {
+    TodayTasks(); // Call the function when the button is clicked
   };
 
   return (
     <div className="toolbar">
-      <button className="toolbar-button" onClick={handleLogout}>
+      <button className="toolbar-button" onClick={logout}>
         <FontAwesomeIcon icon={faSignOutAlt} />
         Logout
       </button>
-      <button className="toolbar-button" onClick={handleCalendarButtonClick}>
+      <button className="toolbar-button" onClick={CalendarButtonClick}>
         <FontAwesomeIcon icon={faCalendarAlt} />
         Calendar
       </button>
-      <button className="toolbar-button" onClick={handleTodayTasksClick}>
+      <button className="toolbar-button" onClick={TodayTasksClick}>
         <FontAwesomeIcon icon={faCalendarDay} />
         Today Tasks
       </button>
