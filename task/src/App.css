@@ -594,7 +594,16 @@ th, td {
     text-align: left;
   }
   .logo-img {
+    display: block;
     max-width: 25%;
+  }
+  .awesome-button {
+    font-size: 16px;
+    padding: 20px 30px;
+  }
+
+  .awesome-button:hover {
+    transform: none;
   }
 }
 
