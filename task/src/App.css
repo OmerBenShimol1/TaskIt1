@@ -19,11 +19,13 @@ h1 {
 	
 
 h8 {
+  font-size: 2rem;
   text-align: center;
   color: #e9edf1;
-  margin-right: 15px;
+  margin-right: 30px;
   text-shadow: #3e4041;
   font-weight: bold;
+  text-align: center;
 }
 	
 	
