@@ -585,7 +585,7 @@ th, td {
 }
 
 /* Media query for mobile devices */
-@media only screen and ((max-width: 480px) ) {
+@media only screen and ((max-width: 480px) and (max-height: 360px) ) {
   table.responsive-table {
     display: block;
     overflow-x: auto;
@@ -604,20 +604,7 @@ th, td {
   .awesome-button:hover {
     transform: none;
   }
-}
-/*@media only screen and (min-width: 480px) {
-  .logo-img {
-    max-width: 50%;
-  }
-}
 
-@media only screen and (min-width: 768px) {
-  .logo-img {
-    max-width: 25%;
-  }
-
-}
-*/
 .note-content.completed {
   text-decoration: line-through;
 }
