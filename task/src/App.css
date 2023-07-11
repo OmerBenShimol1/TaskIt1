@@ -582,7 +582,7 @@ th, td {
 }
 
 /* Media query for mobile devices */
-@media only screen and ((max-width: 667px) and (max-height: 375px )) {
+@media only screen and ((max-width: 480px) ) {
   table.responsive-table {
     display: block;
     overflow-x: auto;
@@ -594,7 +594,6 @@ th, td {
     text-align: left;
   }
   .logo-img {
-    display: block;
     max-width: 25%;
   }
   .awesome-button {
