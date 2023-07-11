@@ -7,24 +7,24 @@ import {
   faLightbulb,
 } from '@fortawesome/free-solid-svg-icons';
 
-/*Toolbar Page*/
+/*Toolbar file*/
 
-const Toolbar = ({ logout, CalendarButtonClick, TodayTasks, getNotes, username, setShowinst }) => {
-  const TodayTasksClick = () => {
-    TodayTasks(); // Call the function when the button is clicked
+const Toolbar = ({ handleLogout, handleCalendarButtonClick, handleTodayTasks, getNotes, username, setShowinst }) => {
+  const handleTodayTasksClick = () => {
+    handleTodayTasks(); // Call the function when the button is clicked
   };
 
   return (
     <div className="toolbar">
-      <button className="toolbar-button" onClick={logout}>
+      <button className="toolbar-button" onClick={handleLogout}>
         <FontAwesomeIcon icon={faSignOutAlt} />
         Logout
       </button>
-      <button className="toolbar-button" onClick={CalendarButtonClick}>
+      <button className="toolbar-button" onClick={handleCalendarButtonClick}>
         <FontAwesomeIcon icon={faCalendarAlt} />
         Calendar
       </button>
-      <button className="toolbar-button" onClick={TodayTasksClick}>
+      <button className="toolbar-button" onClick={handleTodayTasksClick}>
         <FontAwesomeIcon icon={faCalendarDay} />
         Today Tasks
       </button>

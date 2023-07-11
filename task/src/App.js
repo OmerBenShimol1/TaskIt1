@@ -33,7 +33,7 @@
     const [showTodayTasks] = useState(false);
     const [ ,setShowNotes] = useState(true); 
     const [showInst, setShowinst] = useState(false);
-    const [showAllTasks] = useState(false);
+    const [showAllTasks] = useState(false); 
     const [username, setUsername] = useState('');
 // Get user's notes
   const getNotes = async (username) => {
@@ -42,7 +42,7 @@
         params: { username },
       });
       const notesData = response.data;
-      console.log('Notes data:', notesData);
+      console.log('Notes data:', notesData); // Log the notes data
 
       const updatedNotes = {
         new: [],
@@ -73,8 +73,8 @@
       console.error('Error retrieving notes:', error.response.data.message);
     }
   };
-    //  Today's tasks. (Showing the today's date notes)
-  const TodayTasks = () => {
+    // Handle Today's tasks. (Showing the today's date notes)
+  const handleTodayTasks = () => {
     setShowNotes((prevShowNotes) => !prevShowNotes);
   
     if (!showTodayTasks && !showAllTasks) {
@@ -97,8 +97,8 @@
     }
   };
      
-  //  Tasks by selected day. (Showing the specific date notes)
-  const SelectedDateTasks = (selectedDate) => {
+  // Handle Tasks by selected day. (Showing the specific date notes)
+  const handleSelectedDateTasks = (selectedDate) => {
     if (selectedDate) {
       const timezoneOffset = selectedDate.getTimezoneOffset() * 60000;
       const formattedDate = new Date(
@@ -131,13 +131,13 @@
     }
   };
     //Show the calender pop up
-  const CalendarButtonClick = () => {
+  const handleCalendarButtonClick = () => {
     setSelectedDate(null); // Reset the selected date
     setShowCalendarPopup(!showCalendarPopup);
   };
       
     //Show the calender pop up
-    const LogoPopUp = () => {
+    const handleLogoPopUp = () => {
       setShowLogo(false);
       setShowCalendarPopup(false);
     };
@@ -151,28 +151,28 @@
         clearInterval(timer);
       };
     }, []);
-//  login
-    const Login = (event, loggedInUsername) => {
+// Handle login by given input
+    const handleLogin = (event, loggedInUsername) => {
       event.preventDefault();
       setShowLogin(true);
       setUsername(loggedInUsername); // Update the username state with the logged-in username
     };
-    //  Signup
-    const Signup = (event) => {
+    // Handle Signup by given input
+    const handleSignup = (event) => {
       event.preventDefault();
       setShowSignup(true);
     };
-//  close button (Send the user to the home page from Login or Signup)
-    const Close = () => {
+// Handle close button (Send the user to the home page from Login or Signup)
+    const handleClose = () => {
       setShowLogin(false);
     };
 
-    const ShowPopup = () => {
+    const handleShowPopup = () => {
       setShowPopup(!showPopup);
     };
     
-//  Note submit by given note data
-  const NoteSubmit = async (event) => {
+// Handle Note submit by given note data
+  const handleNoteSubmit = async (event) => {
     event.preventDefault();
 
     try {
@@ -202,7 +202,7 @@
 
 
               
-      const logout = () => {
+      const handleLogout = () => {
       setShowTable(false);
       setShowLogin(false);
       setShowSignup(false);
@@ -219,10 +219,10 @@
           
           <div id="tableContainer">
 <Toolbar
-  logout={logout}
-  CalendarButtonClick={CalendarButtonClick}
-  TodayTasks={TodayTasks}
-  SelectedDateTasks={SelectedDateTasks}
+  handleLogout={handleLogout}
+  handleCalendarButtonClick={handleCalendarButtonClick}
+  handleTodayTasks={handleTodayTasks}
+  handleSelectedDateTasks={handleSelectedDateTasks}
   getNotes={getNotes}
   username={username}
   setShowinst={setShowinst}
@@ -249,7 +249,7 @@
     </div>
     <div className="calendar-popup-controls">
       <button className="calendar-popup-button" onClick={() => setShowCalendarPopup(false)}>Close</button>
-      <button className="calendar-popup-button" onClick={() => SelectedDateTasks(selectedDate)}>Ok</button>
+      <button className="calendar-popup-button" onClick={() => handleSelectedDateTasks(selectedDate)}>Ok</button>
     </div>
   </div>
 )}
@@ -258,7 +258,7 @@
           notes={notes}
           selectedColumns={selectedColumns}
           setSelectedColumns={setSelectedColumns}
-          LogoPopUp={LogoPopUp}
+          handleLogoPopUp={handleLogoPopUp}
           setNotes={setNotes}
           username={username}
           getNotes={getNotes}
@@ -268,7 +268,7 @@
               <div className="center-bottom2">
                 <button
                   id="bt"
-                  onClick={ShowPopup}
+                  onClick={handleShowPopup}
                   className="newtask-button"
                 >
                   +
@@ -279,8 +279,8 @@
             <div>
   {showLogin && (
     <Login
-      Login={(event, loggedInUsername) => Login(event, loggedInUsername)}
-      Close={Close}
+      handleLogin={(event, loggedInUsername) => handleLogin(event, loggedInUsername)}
+      handleClose={handleClose}
       setShowLogin={setShowLogin}
       setShowTable={setShowTable}
       setShowSignup={setShowSignup}
@@ -289,7 +289,7 @@
     />
   )}
                   {showSignup && ( <Signup
-            Signup={Signup}
+            handleSignup={handleSignup}
             confirmPassword={confirmPassword}
             setConfirmPassword={setConfirmPassword}
             setShowSignup={setShowSignup}
@@ -297,10 +297,10 @@
   <div className="center-container">
     {!showLogin && !showSignup && (
       <div className="center-bottom">
-        <button id="bt" onClick={Login} className="awesome-button">
+        <button id="bt" onClick={handleLogin} className="awesome-button">
           Login
         </button>
-        <button id="bt2" onClick={Signup} className="awesome-button">
+        <button id="bt2" onClick={handleSignup} className="awesome-button">
           Signup
         </button>
         
@@ -318,9 +318,7 @@
         To do that, click on the "New Task" button.
         After that we will have to enter the name of the task, the urgency and the date to perform the task.
         After clicking Add you will see the task in the "New" column. 
-        To move the task to in progress or done you can click on column selection.
-        By click on the calender you can pick a date and see the tasks for this day. 
-        If there is any task in a date it will show in green.
+        To move the task to problem or done you can click on column selection and choose not to move the task.
 
 
       </h3>
@@ -335,7 +333,7 @@
             <div className="popup">
               <div className="popup-content">
                 <h2>New Task</h2>
-                <form onSubmit={NoteSubmit}>
+                <form onSubmit={handleNoteSubmit}>
                   <input
                     type="text"
                     placeholder="Task"
@@ -359,7 +357,7 @@
                     required
                   />
                   <button type="submit">Add</button>
-                  <button className="close-button" onClick={ShowPopup}>
+                  <button className="close-button" onClick={handleShowPopup}>
                   Close
                 </button>
 
