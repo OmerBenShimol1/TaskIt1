@@ -16,6 +16,7 @@ const Toolbar = ({ handleLogout, handleCalendarButtonClick, handleTodayTasks, ge
 
   return (
     <div className="toolbar">
+       <h8>Task It</h8>
       <button className="toolbar-button" onClick={handleLogout}>
         <FontAwesomeIcon icon={faSignOutAlt} />
         Logout
@@ -36,7 +37,6 @@ const Toolbar = ({ handleLogout, handleCalendarButtonClick, handleTodayTasks, ge
         <FontAwesomeIcon icon={faLightbulb} />
         How it works?
       </button>
-      <h8>Task It</h8>
     </div>
   );
 };
