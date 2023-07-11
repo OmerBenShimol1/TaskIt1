@@ -338,9 +338,16 @@ body {
   align-items: center;
 }
 
-.logo-img {
-  max-width: 25%;
+.logo-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
 
+.logo-img {
+  max-width: 100%;
+  height: auto;
 }
 
 .task-info {
@@ -593,9 +600,6 @@ th, td {
     display: block;
     text-align: left;
   }
-  .logo-img {
-    max-width: 25%;
-  }
   .awesome-button {
     font-size: 16px;
     padding: 20px 30px;
@@ -605,7 +609,16 @@ th, td {
     transform: none;
   }
 }
+@media only screen and (min-width: 480px) {
+  .logo-img {
+    max-width: 50%;
+  }
+}
 
+@media only screen and (min-width: 768px) {
+  .logo-img {
+    max-width: 25%;
+  }
 
 
 
