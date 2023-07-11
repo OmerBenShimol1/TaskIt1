@@ -318,9 +318,9 @@
         To do that, click on the "New Task" button.
         After that we will have to enter the name of the task, the urgency and the date to perform the task.
         After clicking Add you will see the task in the "New" column. 
-        To move the task to problem or done you can click on column selection and choose not to move the task.
-
-
+        To move the task to in progress or done you can click on column selection.
+        By click on the calender you can pick a date and see the tasks for this day. 
+        If there is any task in a date it will show in green.
       </h3>
       <button onClick={() => setShowinst(false)}>Close</button>
     </div>
