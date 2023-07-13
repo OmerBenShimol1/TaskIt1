@@ -74,7 +74,7 @@
     }
   };
     // Handle Today's tasks. (Showing the today's date notes)
-  const handleTodayTasks = () => {
+  const TodayTasksHandler = () => {
     setShowNotes((prevShowNotes) => !prevShowNotes);
   
     if (!showTodayTasks && !showAllTasks) {
@@ -98,7 +98,7 @@
   };
      
   // Handle Tasks by selected day. (Showing the specific date notes)
-  const handleSelectedDateTasks = (selectedDate) => {
+  const SelectedDateTasksHandler = (selectedDate) => {
     if (selectedDate) {
       const timezoneOffset = selectedDate.getTimezoneOffset() * 60000;
       const formattedDate = new Date(
@@ -131,13 +131,13 @@
     }
   };
     //Show the calender pop up
-  const handleCalendarButtonClick = () => {
+  const CalendarButtonClickHandler = () => {
     setSelectedDate(null); // Reset the selected date
     setShowCalendarPopup(!showCalendarPopup);
   };
       
-    //Show the calender pop up
-    const handleLogoPopUp = () => {
+    //Show the Logo pop up
+    const LogoPopUpHandler = () => {
       setShowLogo(false);
       setShowCalendarPopup(false);
     };
@@ -152,27 +152,27 @@
       };
     }, []);
 // Handle login by given input
-    const handleLogin = (event, loggedInUsername) => {
+    const LoginHandler = (event, loggedInUsername) => {
       event.preventDefault();
       setShowLogin(true);
       setUsername(loggedInUsername); // Update the username state with the logged-in username
     };
     // Handle Signup by given input
-    const handleSignup = (event) => {
+    const SignupHandler = (event) => {
       event.preventDefault();
       setShowSignup(true);
     };
 // Handle close button (Send the user to the home page from Login or Signup)
-    const handleClose = () => {
+    const CloseHandler = () => {
       setShowLogin(false);
     };
 
-    const handleShowPopup = () => {
+    const ShowPopupHandler = () => {
       setShowPopup(!showPopup);
     };
     
 // Handle Note submit by given note data
-  const handleNoteSubmit = async (event) => {
+  const NoteSubmitHandler = async (event) => {
     event.preventDefault();
 
     try {
@@ -202,7 +202,7 @@
 
 
               
-      const handleLogout = () => {
+      const LogoutHandler = () => {
       setShowTable(false);
       setShowLogin(false);
       setShowSignup(false);
@@ -219,10 +219,10 @@
           
           <div id="tableContainer">
 <Toolbar
-  handleLogout={handleLogout}
-  handleCalendarButtonClick={handleCalendarButtonClick}
-  handleTodayTasks={handleTodayTasks}
-  handleSelectedDateTasks={handleSelectedDateTasks}
+  LogoutHandler={LogoutHandler}
+  CalendarButtonClickHandler={CalendarButtonClickHandler}
+  TodayTasksHandler={TodayTasksHandler}
+  SelectedDateTasksHandler={SelectedDateTasksHandler}
   getNotes={getNotes}
   username={username}
   setShowinst={setShowinst}
@@ -249,7 +249,7 @@
     </div>
     <div className="calendar-popup-controls">
       <button className="calendar-popup-button" onClick={() => setShowCalendarPopup(false)}>Close</button>
-      <button className="calendar-popup-button" onClick={() => handleSelectedDateTasks(selectedDate)}>Ok</button>
+      <button className="calendar-popup-button" onClick={() => SelectedDateTasksHandler(selectedDate)}>Ok</button>
     </div>
   </div>
 )}
@@ -258,7 +258,7 @@
           notes={notes}
           selectedColumns={selectedColumns}
           setSelectedColumns={setSelectedColumns}
-          handleLogoPopUp={handleLogoPopUp}
+          LogoPopUp={LogoPopUpHandler}
           setNotes={setNotes}
           username={username}
           getNotes={getNotes}
@@ -268,7 +268,7 @@
               <div className="center-bottom2">
                 <button
                   id="bt"
-                  onClick={handleShowPopup}
+                  onClick={ShowPopupHandler}
                   className="newtask-button"
                 >
                   +
@@ -279,8 +279,8 @@
             <div>
   {showLogin && (
     <Login
-      handleLogin={(event, loggedInUsername) => handleLogin(event, loggedInUsername)}
-      handleClose={handleClose}
+      LoginHandler={(event, loggedInUsername) => LoginHandler(event, loggedInUsername)}
+      CloseHandler={CloseHandler}
       setShowLogin={setShowLogin}
       setShowTable={setShowTable}
       setShowSignup={setShowSignup}
@@ -289,7 +289,7 @@
     />
   )}
                   {showSignup && ( <Signup
-            handleSignup={handleSignup}
+            SignupHandler={SignupHandler}
             confirmPassword={confirmPassword}
             setConfirmPassword={setConfirmPassword}
             setShowSignup={setShowSignup}
@@ -297,10 +297,10 @@
   <div className="center-container">
     {!showLogin && !showSignup && (
       <div className="center-bottom">
-        <button id="bt" onClick={handleLogin} className="awesome-button">
+        <button id="bt" onClick={LoginHandler} className="awesome-button">
           Login
         </button>
-        <button id="bt2" onClick={handleSignup} className="awesome-button">
+        <button id="bt2" onClick={SignupHandler} className="awesome-button">
           Signup
         </button>
         
@@ -333,7 +333,7 @@
             <div className="popup">
               <div className="popup-content">
                 <h2>New Task</h2>
-                <form onSubmit={handleNoteSubmit}>
+                <form onSubmit={NoteSubmitHandler}>
                   <input
                     type="text"
                     placeholder="Task"
@@ -357,7 +357,7 @@
                     required
                   />
                   <button type="submit">Add</button>
-                  <button className="close-button" onClick={handleShowPopup}>
+                  <button className="close-button" onClick={ShowPopupHandler}>
                   Close
                 </button>
 

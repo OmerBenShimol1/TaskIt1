@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import axios from 'axios';
 /* Signup file */
 const Signup = ({
-    handleSignup,
+    SignupHandler,
     confirmPassword,
     setConfirmPassword,
     setShowSignup,
@@ -12,17 +12,17 @@ const Signup = ({
   const [registrationSuccess, setRegistrationSuccess] = useState(false);
   const [passwordsMatch, setPasswordsMatch] = useState(true); // Set an initial value
 // Set the new user's username
-  const handleUsernameChange = (event) => {
+  const UsernameChangeHandler = (event) => {
     setUsername(event.target.value);
   };
 // Set the new user's password
-  const handlePasswordChange = (event) => {
+  const PasswordChangeHandler = (event) => {
     setPassword(event.target.value);
   };
 
 
 // Handle Signup form
-  const handleRegistrationFormSubmit = async (event) => {
+  const RegistrationFormSubmitHandler = async (event) => {
     event.preventDefault();
     if (password === confirmPassword) {
       try {
@@ -56,14 +56,14 @@ const Signup = ({
     <div id="hiddenContent2">
       <div className="login-container">
         <h2>Signup</h2>
-        <form className="login-form" onSubmit={handleRegistrationFormSubmit}>
+        <form className="login-form" onSubmit={RegistrationFormSubmitHandler}>
           <label>
             Username:
-            <input type="text" value={username} onChange={handleUsernameChange} />
+            <input type="text" value={username} onChange={UsernameChangeHandler} />
           </label>
           <label>
             Password:
-            <input type="password" value={password} onChange={handlePasswordChange} />
+            <input type="password" value={password} onChange={PasswordChangeHandler} />
           </label>
           <label>
             Confirm password:
