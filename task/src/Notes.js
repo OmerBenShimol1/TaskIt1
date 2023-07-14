@@ -15,7 +15,7 @@ const Notes = ({
   }) => {
     setShowLogo(false)
 
-    const EditNoteHandler = async (column, index, newTask, selectedColumn) => {
+    const handleEditNote = async (column, index, newTask, selectedColumn) => {
         try {
           const response = await axios.put('https://task-it1-server.vercel.app/taskit-backend/updateTaskData', {
             taskId: notes[column][index].id,
@@ -65,7 +65,7 @@ const Notes = ({
         });
       };
   
-      const DeleteNoteHandler = async (column, index, id) => {
+      const handleDeleteNote = async (column, index, id) => {
         try {
           // Make the DELETE request to the server after a delay
           await new Promise((resolve) => setTimeout(resolve, 500)); // Add a delay of 500 milliseconds
@@ -132,7 +132,7 @@ const Notes = ({
                   <button
                     className="edit-button"
                     onClick={() =>
-                        EditNoteHandler('new', index, note.task, selectedColumns[note.id])
+                        handleEditNote('new', index, note.task, selectedColumns[note.id])
                     }
                   >
                     <FontAwesomeIcon icon={faPencilAlt} />
@@ -142,7 +142,7 @@ const Notes = ({
                     <button
                       className="delete-button"
                       onClick={() =>
-                        DeleteNoteHandler('new', index, note.id)
+                        handleDeleteNote('new', index, note.id)
                       }
                     >
                       <FontAwesomeIcon icon={faTrashAlt} />
@@ -165,7 +165,7 @@ const Notes = ({
                     <button
                       className="delete-button"
                       onClick={() =>
-                        DeleteNoteHandler('inProgress', index, note.id)
+                        handleDeleteNote('inProgress', index, note.id)
                       }
                     >
                       <FontAwesomeIcon icon={faTrashAlt} />
@@ -189,7 +189,7 @@ const Notes = ({
                     <button
                       className="edit-button"
                       onClick={() =>
-                        EditNoteHandler('inProgress', index, note.task, selectedColumns[note.id])
+                        handleEditNote('inProgress', index, note.task, selectedColumns[note.id])
                       }
                     >
                       <FontAwesomeIcon icon={faPencilAlt} />
@@ -212,7 +212,7 @@ const Notes = ({
                     <button
                       className="delete-button"
                       onClick={() =>
-                        DeleteNoteHandler('done', index, note.id)
+                        handleDeleteNote('done', index, note.id)
                       }
                     >
                       <FontAwesomeIcon icon={faTrashAlt} />
@@ -236,7 +236,7 @@ const Notes = ({
                     <button
                       className="edit-button"
                       onClick={() =>
-                        EditNoteHandler('done', index, note.task, selectedColumns[note.id])
+                        handleEditNote('done', index, note.task, selectedColumns[note.id])
                       }
                     >
                       <FontAwesomeIcon icon={faPencilAlt} />

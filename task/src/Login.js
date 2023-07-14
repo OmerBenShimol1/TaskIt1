@@ -1,18 +1,18 @@
 import React, { useState } from 'react';
 /* Login Page */
-const Login = ({LoginHandler, CloseHandler, setShowLogin, setShowTable, setShowSignup, getNotes, setNotes }) => {
+const Login = ({ handleLogin, handleClose, setShowLogin, setShowTable, setShowSignup, getNotes, setNotes }) => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
 
-  const UsernameChangeHandler = (event) => {
+  const handleUsernameChange = (event) => {
     setUsername(event.target.value);
   };
 
-  const PasswordChangeHandler = (event) => {
+  const handlePasswordChange = (event) => {
     setPassword(event.target.value);
   };
 
-  const LoginFormSubmitHandler = async (event) => {
+  const handleLoginFormSubmit = async (event) => {
     event.preventDefault();
 // Check if the given username and password exists and match
     try {
@@ -39,7 +39,7 @@ const Login = ({LoginHandler, CloseHandler, setShowLogin, setShowTable, setShowS
           setNotes(updatedNotes);
         }
 
-        LoginHandler(event, username);
+        handleLogin(event, username);
       } else {
         alert('Username or password is incorrect');
       }
@@ -52,13 +52,13 @@ const Login = ({LoginHandler, CloseHandler, setShowLogin, setShowTable, setShowS
     <div id="hiddenContent">
       <div className="login-container">
         <h2>Login</h2>
-        <form onSubmit={LoginFormSubmitHandler}>
+        <form onSubmit={handleLoginFormSubmit}>
           <label>
             Username:
             <input
               type="text"
               value={username}
-              onChange={UsernameChangeHandler}
+              onChange={handleUsernameChange}
             />
           </label>
           <br />
@@ -67,12 +67,12 @@ const Login = ({LoginHandler, CloseHandler, setShowLogin, setShowTable, setShowS
             <input
               type="password"
               value={password}
-              onChange={PasswordChangeHandler}
+              onChange={handlePasswordChange}
             />
           </label>
           <br />
           <button className="awesome-button" type="submit">Login</button>
-          <button className="awesome-button" onClick={CloseHandler}>Close</button>
+          <button className="awesome-button" onClick={handleClose}>Close</button>
         </form>
       </div>
     </div>
