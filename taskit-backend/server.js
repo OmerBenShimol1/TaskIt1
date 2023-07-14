@@ -63,7 +63,7 @@ const noteSchema = new mongoose.Schema({
 const Note = mongoose.model('Note', noteSchema);
 
 // User registration
-app.post('/taskit-backend/register', async (req, res) => {
+app.post('/taskit-backend/register',cors(corsOptions), async (req, res) => {
   res.header('Access-Control-Allow-Origin', 'https://task-it1.vercel.app'); // Set the allowed origin
   res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
 
@@ -89,7 +89,7 @@ app.post('/taskit-backend/register', async (req, res) => {
 });
 
 // User Login
-app.post('/taskit-backend/login', async (req, res) => {
+app.post('/taskit-backend/login',cors(corsOptions), async (req, res) => {
   res.header('Access-Control-Allow-Origin', 'https://task-it1.vercel.app'); // Set the allowed origin
   res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
   const { username, password } = req.body;
