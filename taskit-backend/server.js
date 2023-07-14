@@ -9,7 +9,7 @@ const port = 5001;
 
 // Middleware
 app.use(bodyParser.json());
-app.use(cors());
+app.use(cors({ origin: 'https://task-it1.vercel.app' }));
 
 // cors config
 const corsOptions = {
