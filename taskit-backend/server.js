@@ -20,7 +20,7 @@ app.use(cors(corsOptions));
 
 // MongoDB connection
 mongoose
-  .connect('mongodb+srv://amitandomerdb:AO123@cluster0.emguiob.mongodb.net/taskit-backend?retryWrites=true&w=majority', {
+  .connect('mongodb+srv://amomvibe:AO123@cluster0.emguiob.mongodb.net/taskit-backend?retryWrites=true&w=majority', {
     useNewUrlParser: true,
     useUnifiedTopology: true,
   })
